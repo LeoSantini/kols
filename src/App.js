@@ -8,11 +8,11 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="product/:_id" element={<Product />} />
         <Route path="/addProduct" element={<Form />} />
-      </Routes>
+      </Routes> */}
     </BrowserRouter>
   );
 }
