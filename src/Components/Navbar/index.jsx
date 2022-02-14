@@ -14,7 +14,7 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import AddIcon from "@mui/icons-material/Add";
 import HomeIcon from "@mui/icons-material/Home";
 
-export function Navbar() {
+function Navbar() {
   const [value, setValue] = React.useState(0);
 
   return (
@@ -39,3 +39,5 @@ export function Navbar() {
     </Box>
   );
 }
+
+export default Navbar
