@@ -18,7 +18,7 @@ function Navbar() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box sx={{ width: 500 }}>
+    <Box sx={{ width: 360 }}>
       <BottomNavigation
         showLabels
         value={value}
@@ -27,7 +27,7 @@ function Navbar() {
         }}
       >
         <Link to="/">
-          <BottomNavigationAction label="Home" icon={<HomeIcon />} />{" "}
+          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
         </Link>
         <Link to="/product">
           <BottomNavigationAction label="Products" icon={<InventoryIcon />} />
