@@ -14,28 +14,44 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import AddIcon from "@mui/icons-material/Add";
 import HomeIcon from "@mui/icons-material/Home";
 
+// Import theme color
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+
 export function Navbar() {
   const [value, setValue] = React.useState(0);
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#495371",
+      },
+      secondary: {
+        main: "#74959A",
+      },
+    },
+  });
+
   return (
-    <Box sx={{ width: 360 }}>
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-      >
-        <Link to="/">
-          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        </Link>
-        <Link to="/product">
-          <BottomNavigationAction label="Products" icon={<InventoryIcon />} />
-        </Link>
-        <Link to="/addProduct">
-          <BottomNavigationAction label="Add Product" icon={<AddIcon />} />
-        </Link>
-      </BottomNavigation>
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ width: 360 }}>
+        <BottomNavigation
+          showLabels
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        >
+          <Link to="/">
+            <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+          </Link>
+          <Link to="/product">
+            <BottomNavigationAction label="Products" icon={<InventoryIcon />} />
+          </Link>
+          <Link to="/addProduct">
+            <BottomNavigationAction label="Add Product" icon={<AddIcon />} />
+          </Link>
+        </BottomNavigation>
+      </Box>
+    </ThemeProvider>
   );
 }
