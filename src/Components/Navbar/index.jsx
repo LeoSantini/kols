@@ -14,10 +14,14 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import AddIcon from "@mui/icons-material/Add";
 import HomeIcon from "@mui/icons-material/Home";
 
+<<<<<<< HEAD
 // Import theme color
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
 export function Navbar() {
+=======
+function Navbar() {
+>>>>>>> 549612eb4b94dfca9bec2843311aac85229ff2a5
   const [value, setValue] = React.useState(0);
 
   const theme = createTheme({
@@ -55,3 +59,5 @@ export function Navbar() {
     </ThemeProvider>
   );
 }
+
+export default Navbar

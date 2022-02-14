@@ -1,0 +1,21 @@
+
+
+.card {
+    display: flex;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    row-gap: 10px;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
