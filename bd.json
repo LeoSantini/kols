@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Galaxy s10 +",
+    "description": "Bem melhor que o Iphone",
+    "quantity": 10,
+    "purchase_price": 3200,
+    "sale_value": 4000,
+    "part_number": "PN0001",
+    "supplier": "samsung",
+    "resupply_point": 0,
+    "category": "celular",
+    "image": "data:image/jpeg;base64,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"
+  },
+  {
+    "name": "Iphone 11",
+    "description": "o preço de uma casa",
+    "quantity": 30,
+    "purchase_price": 4000,
+    "sale_value": 4500,
+    "part_number": "PN0001",
+    "supplier": "Apple",
+    "resupply_point": 3,
+    "category": "celular",
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=834&hei=1000&fmt=jpeg&qlt=95&.v=1566956144418"
+  },
+  {
+    "name": "Iphone 12",
+    "description": "o preço de uma casa com piscina",
+    "quantity": 10,
+    "purchase_price": 4000,
+    "sale_value": 6000,
+    "part_number": "PN0001",
+    "supplier": "Apple",
+    "resupply_point": 3,
+    "category": "celular",
+    "image": "https://a-static.mlcdn.com.br/618x463/iphone-12-apple-64gb-product-red-tela-61-12mp-ios/magazineluiza/231147500/6dc84326e6ec9aa975aa2762a5651c18.jpg"
+  },
+  {
+    "name": "Iphone 13",
+    "description": "o preço de uma mansão",
+    "quantity": 5,
+    "purchase_price": 7000,
+    "sale_value": 9000,
+    "part_number": "PN0001",
+    "supplier": "Apple",
+    "resupply_point": 3,
+    "category": "celular",
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-blue-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652954000"
+  },
+  {
+    "name": "Iphone 11 XR",
+    "description": "o preço de um gol antigo",
+    "quantity": 9,
+    "purchase_price": 3500,
+    "sale_value": 4000,
+    "part_number": "PN0001",
+    "supplier": "Apple",
+    "resupply_point": 3,
+    "category": "celular",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_881281-MLA46545868514_062021-O.webp"
+  },
+  {
+    "name": "Iphone 12 PRO MAX",
+    "description": "duas kitnet com terreno",
+    "quantity": 3,
+    "purchase_price": 4500,
+    "sale_value": 9000,
+    "part_number": "PN0001",
+    "supplier": "Apple",
+    "resupply_point": 3,
+    "category": "celular",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_659528-MLA46093213122_052021-O.webp"
+  }
+]
