@@ -32,7 +32,7 @@ function App() {
       }
     }
     fetchStock()
-  }, [])
+  }, [isLoading])
   console.log(stock)
 
   return (
@@ -41,8 +41,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products stock={stock} />} />
-        <Route path="product/:_id" element={<Product stock={stock} />}  />
-          {/*<Route path="/addProduct" element={<Form />} / */}
+        <Route path="product/:_id" element={<Product stock={stock} />} />
+        {/*<Route path="/addProduct" element={<Form />} / */}
       </Routes>
     </BrowserRouter>
   );

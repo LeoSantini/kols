@@ -2,7 +2,7 @@ import './Products.css'
 
 import {Link} from 'react-router-dom'
 
-function Products({ stock }) {
+function Products({ stock}) {
     return (
         <div className='cards'>
             {stock.map((product) => {
