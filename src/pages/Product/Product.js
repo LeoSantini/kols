@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 // Import funções React
 import * as React from "react";
 import axios from "axios";
-import uniqid from 'uniqid'
+import uniqid from "uniqid";
 // Import funções Material UI
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -83,10 +83,7 @@ function Product({ stock, setRerender }) {
                 </Typography>
               </CardContent>
               <CardActions sx={{ justifyContent: "space-between" }}>
-                <Link
-                  to={`/products`}
-                  style={{ textDecoration: "none" }}
-                >
+                <Link to={`/products`} style={{ textDecoration: "none" }}>
                   <ThemeProvider theme={theme}>
                     <Button
                       variant="outlined"
@@ -114,7 +111,12 @@ function Product({ stock, setRerender }) {
                   color="success"
                   size="small"
                 >
-                <Link to={`/editProduct/${params._id}`}>Editar</Link>
+                  <Link
+                    to={`/editProduct/${params._id}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    Editar
+                  </Link>
                 </Button>
               </CardActions>
             </Card>

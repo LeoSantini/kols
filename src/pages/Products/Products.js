@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useEffect } from 'react'
-import uniqid from 'uniqid'
+import { useEffect } from "react";
+import uniqid from "uniqid";
 // Import table Material UI
 import * as React from "react";
 import Table from "@mui/material/Table";
@@ -14,7 +14,7 @@ import Paper from "@mui/material/Paper";
 function Products({ stock }) {
   return (
     <div>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} sx={{ maxWidth: 344 }}>
         <Table sx={{ maxWidth: 350 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow sx={{ bgcolor: "#F1E0AC" }}>
@@ -91,6 +91,5 @@ function Products({ stock }) {
 }
 
 export default Products;
-
 
 /* Perguntar para o Ale, como fazer quando voltarmos para a pagina de produtos, ela atualizar */
