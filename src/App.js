@@ -3,41 +3,37 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 // Import de componentes
-/* import Navbar from "./Components/Navbar/index";
-import { Product } from './src/Components/Product/index';
-import { Form } from './src/Components/Form/index' */
-import Home from "./pages/Home/Home"
-import Products from "./pages/Products/Products"
-import Product from "./pages/Product/Product"
+import Navbar from "./Components/Navbar/index";
+// import { Form } from './src/Components/Form/index'
+import Home from "./pages/Home/Home";
+import Products from "./pages/Products/Products";
+import Product from "./pages/Product/Product";
 
-import axios from "axios"
-
+import axios from "axios";
 
 function App() {
-
-  const [stock, setStock] = useState()
-  const [isLoading, setIsLoading] = useState(false)
-
+  const [stock, setStock] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchStock() {
-      setIsLoading(true)
+      setIsLoading(true);
       try {
-        const result = await axios.get('https://ironrest.herokuapp.com/kols')
-        setStock(result.data)
+        const result = await axios.get("https://ironrest.herokuapp.com/kols");
+        setStock(result.data);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
     }
-    fetchStock()
-  }, [isLoading])
-  console.log(stock)
+    fetchStock();
+  }, []);
+  console.log(stock);
 
   return (
     <BrowserRouter>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products stock={stock} />} />
