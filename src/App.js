@@ -1,6 +1,7 @@
 // Import funções react
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import React from 'react'
 
 // Import de componentes
 import Navbar from "./Components/Navbar/index";
@@ -38,7 +39,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products stock={stock} setRerender={setRerender}/>} />
         <Route path="/product/:_id" element={<Product stock={stock} setRerender={setRerender} />} />
-        <Route path="/addProduct" element={<Form />} />
+        <Route path="/addProduct" element={<Form setRerender={setRerender}/>} />
         <Route path="/editProduct/:_id" element={<Edit setRerender={setRerender}/>} />
       </Routes>
     </BrowserRouter>
