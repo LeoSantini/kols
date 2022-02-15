@@ -14,7 +14,7 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import AddIcon from "@mui/icons-material/Add";
 import HomeIcon from "@mui/icons-material/Home";
 
-function Navbar() {
+export function Navbar() {
   const [value, setValue] = React.useState(0);
 
   return (
@@ -29,7 +29,7 @@ function Navbar() {
         <Link to="/">
           <BottomNavigationAction label="Home" icon={<HomeIcon />} />
         </Link>
-        <Link to="/product">
+        <Link to="/products">
           <BottomNavigationAction label="Products" icon={<InventoryIcon />} />
         </Link>
         <Link to="/addProduct">
@@ -40,4 +40,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;
