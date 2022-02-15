@@ -47,10 +47,10 @@ function Form() {
     event.preventDefault();
 
     try {
-    const result = axios.post("https://ironrest.herokuapp.com/kols", form);
-    Navigate("/products");
+      const result = axios.post("https://ironrest.herokuapp.com/kols", form);
+      Navigate("/products");
     } catch (error) {
-    console.log(error);
+      console.log(error);
     }
     }
   
@@ -60,7 +60,7 @@ function Form() {
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, maxWidth: 350 },
+          "& > :not(style)": { maxWidth: 360, marginTop: 1 },
         }}
         noValidate
         autoComplete="off"
@@ -73,6 +73,7 @@ function Form() {
           name="name"
           value={form.name}
           fullWidth
+          required
         />
         <TextField
           id="outlined-basic"
@@ -83,6 +84,7 @@ function Form() {
           value={form.description}
           multiline
           fullWidth
+          required
         />
         <TextField
           id="outlined-basic"
@@ -93,6 +95,8 @@ function Form() {
           value={form.quantity}
           type="number"
           fullWidth
+          required
+          InputProps={{ inputProps: { min: 0 } }}
         />
         <TextField
           id="outlined-basic"
@@ -102,6 +106,8 @@ function Form() {
           value={form.purchase_price}
           type="number"
           fullWidth
+          required
+          InputProps={{ inputProps: { min: 0 } }}
         />
         <TextField
           id="outlined-basic"
@@ -111,6 +117,8 @@ function Form() {
           value={form.sale_value}
           type="number"
           fullWidth
+          required
+          InputProps={{ inputProps: { min: 0 } }}
         />
         <TextField
           id="outlined-basic"
@@ -119,6 +127,7 @@ function Form() {
           name="part_number"
           value={form.part_number}
           fullWidth
+          required
         />
         <TextField
           id="outlined-basic"
@@ -127,6 +136,7 @@ function Form() {
           name="supplier"
           value={form.supplier}
           fullWidth
+          required
         />
         <TextField
           id="outlined-basic"
@@ -136,8 +146,10 @@ function Form() {
           value={form.resupply_point}
           type="number"
           fullWidth
+          required
+          InputProps={{ inputProps: { min: 0 } }}
         />
-        <FormControl>
+        <FormControl required>
           <FormLabel id="demo-radio-buttons-group-label">Categoria</FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
@@ -173,9 +185,15 @@ function Form() {
           onChange={HandleChange}
           name="image"
           fullWidth
+          required
         />
       </Box>
-      <Stack direction="row" spacing={2}>
+      <Stack
+        direction="row"
+        justifyContent={"center"}
+        spacing={6}
+        sx={{ marginTop: 1 }}
+      >
         <Button
           variant="outlined"
           startIcon={<BackspaceIcon />}
