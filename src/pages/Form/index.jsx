@@ -37,32 +37,23 @@ function Form() {
     console.log(form);
   }
 
-  function HandleSubmit(event) {
+    function HandleSubmit(event) {
     for (let key in form) {
-      if (!form[key]) {
+    if (!form[key]) {
         window.alert(`Preencher o campo ${key}`);
         return;
-      }
+    }
     }
     event.preventDefault();
 
-    function HandleSubmit(event) {
-      for (let key in form) {
-        if (!form[key]) {
-          window.alert(`Preencher o campo ${key}`);
-          return;
-        }
-      }
-      event.preventDefault();
-
-      try {
-        const result = axios.post("https://ironrest.herokuapp.com/kols", form);
-        Navigate("/products");
-      } catch (error) {
-        console.log(error);
-      }
+    try {
+    const result = axios.post("https://ironrest.herokuapp.com/kols", form);
+    Navigate("/products");
+    } catch (error) {
+    console.log(error);
     }
-  }
+    }
+  
 
   return (
     <div>
