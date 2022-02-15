@@ -8,27 +8,27 @@ import Form from "./pages/Form";
 import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
 import Product from "./pages/Product/Product";
+import Edit from "./pages/Edit/Edit"
 
 import axios from "axios";
 
 function App() {
   const [stock, setStock] = useState();
-  const [isLoading, setIsLoading] = useState(false);
+  const [rerender, setRerender] = useState(true);
 
   useEffect(() => {
     async function fetchStock() {
-      setIsLoading(true);
       try {
         const result = await axios.get("https://ironrest.herokuapp.com/kols");
         setStock(result.data);
       } catch (error) {
         console.log(error);
       } finally {
-        setIsLoading(false);
+        setRerender(false);
       }
     }
     fetchStock();
-  }, []);
+  }, [rerender]);
   console.log(stock);
 
   return (
@@ -36,9 +36,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products stock={stock} />} />
-        <Route path="product/:_id" element={<Product stock={stock} />} />
+        <Route path="/products" element={<Products stock={stock} setRerender={setRerender}/>} />
+        <Route path="/product/:_id" element={<Product stock={stock} setRerender={setRerender} />} />
         <Route path="/addProduct" element={<Form />} />
+        <Route path="/editProduct/:_id" element={<Edit setRerender={setRerender}/>} />
       </Routes>
     </BrowserRouter>
   );
