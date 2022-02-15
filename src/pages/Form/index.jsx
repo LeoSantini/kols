@@ -46,12 +46,21 @@ function Form() {
     }
     event.preventDefault();
 
-    try {
-      const result = axios.post("https://ironrest.herokuapp.com/kols", form);
-      console.log(form);
-      //Navigate('/products')
-    } catch (error) {
-      console.log(error);
+    function HandleSubmit(event) {
+      for (let key in form) {
+        if (!form[key]) {
+          window.alert(`Preencher o campo ${key}`);
+          return;
+        }
+      }
+      event.preventDefault();
+
+      try {
+        const result = axios.post("https://ironrest.herokuapp.com/kols", form);
+        Navigate("/products");
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 

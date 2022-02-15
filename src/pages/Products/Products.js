@@ -1,4 +1,11 @@
 import { Link } from "react-router-dom";
+import { useEffect } from 'react'
+
+function Products({ stock, setRerender }) {
+
+  useEffect(() => {
+    setRerender(true)
+  })
 
 // Import table Material UI
 import * as React from "react";
