@@ -17,22 +17,13 @@ function Products({ stock }) {
         <Table sx={{ maxWidth: 350 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow sx={{ bgcolor: "#F1E0AC" }}>
-              <TableCell
-                align="center"
-                sx={{ color: "#74959A", padding: 0.75 }}
-              >
+              <TableCell align="center" sx={{ color: "#74959A", padding: 0.3 }}>
                 Part Number
               </TableCell>
-              <TableCell
-                align="center"
-                sx={{ color: "#74959A", padding: 0.75 }}
-              >
+              <TableCell align="center" sx={{ color: "#74959A", padding: 0.3 }}>
                 Item
               </TableCell>
-              <TableCell
-                align="center"
-                sx={{ color: "#74959A", padding: 0.75 }}
-              >
+              <TableCell align="center" sx={{ color: "#74959A", padding: 0.3 }}>
                 Quantidade
               </TableCell>
             </TableRow>
