@@ -1,12 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect } from 'react'
-
-function Products({ stock, setRerender }) {
-
-  useEffect(() => {
-    setRerender(true)
-  })
-
+import { useEffect } from "react";
 // Import table Material UI
 import * as React from "react";
 import Table from "@mui/material/Table";
@@ -21,27 +14,81 @@ function Products({ stock }) {
   return (
     <div>
       <TableContainer component={Paper}>
-        <Table sx={{ maxWidth: 360 }} size="small" aria-label="a dense table">
+        <Table sx={{ maxWidth: 350 }} size="small" aria-label="a dense table">
           <TableHead>
-            <TableRow>
-              <TableCell align="center">Part Number</TableCell>
-              <TableCell align="center">Item</TableCell>
-              <TableCell align="center">Quantidade</TableCell>
+            <TableRow sx={{ bgcolor: "#F1E0AC" }}>
+              <TableCell
+                align="center"
+                sx={{ color: "#74959A", padding: 0.75 }}
+              >
+                Part Number
+              </TableCell>
+              <TableCell
+                align="center"
+                sx={{ color: "#74959A", padding: 0.75 }}
+              >
+                Item
+              </TableCell>
+              <TableCell
+                align="center"
+                sx={{ color: "#74959A", padding: 0.75 }}
+              >
+                Quantidade
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {stock.map(product => (
               <TableRow
                 key={product._id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                sx={{
+                  "&:last-child td, &:last-child th": {
+                    border: 0,
+                  },
+                }}
               >
-                <TableCell component="th" scope="row" align="center">
+                <TableCell
+                  align="center"
+                  sx={{
+                    color: "#495371",
+                    borderBottom: 0.1,
+                    borderBottomColor: "#495371",
+                    paddingTop: 0.5,
+                    paddingBottom: 0.5,
+                  }}
+                >
                   {product.part_number}
                 </TableCell>
-                <Link to={`/product/${product._id}`}>
-                  <TableCell align="center">{product.name}</TableCell>
+                <Link
+                  to={`/product/${product._id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <TableCell
+                    align="center"
+                    size="large"
+                    sx={{
+                      color: "#495371",
+                      borderBottom: 0.1,
+                      borderBottomColor: "#495371",
+                      paddingTop: 0.5,
+                      paddingBottom: 0.5,
+                    }}
+                  >
+                    {product.name}
+                  </TableCell>
                 </Link>
-                <TableCell align="center">{product.quantity}</TableCell>
+                <TableCell
+                  align="center"
+                  sx={{
+                    color: "#495371",
+                    borderBottom: 0.1,
+                    borderBottomColor: "#495371",
+                    paddingTop: 0.5,
+                    paddingBottom: 0.5,
+                  }}
+                >
+                  {product.quantity}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

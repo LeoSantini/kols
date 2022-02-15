@@ -18,22 +18,35 @@ export function Navbar() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box sx={{ width: 360 }}>
+    <Box sx={{ width: 344 }}>
       <BottomNavigation
-        showlabels= "true"
+        sx={{ bgcolor: "#495371" }}
+        showlabels="true"
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
       >
         <a href="/">
-          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+          <BottomNavigationAction
+            label="Home"
+            icon={<HomeIcon />}
+            sx={{ color: "white" }}
+          />
         </a>
         <Link to="/products">
-          <BottomNavigationAction label="Products" icon={<InventoryIcon />} />
+          <BottomNavigationAction
+            label="Products"
+            icon={<InventoryIcon />}
+            sx={{ color: "white" }}
+          />
         </Link>
         <Link to="/addProduct">
-          <BottomNavigationAction label="Add Product" icon={<AddIcon />} />
+          <BottomNavigationAction
+            label="Add Product"
+            icon={<AddIcon />}
+            sx={{ color: "white" }}
+          />
         </Link>
       </BottomNavigation>
     </Box>
