@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 // Import de componentes
 import Navbar from "./Components/Navbar/index";
-// import { Form } from './src/Components/Form/index'
+import Form from "./pages/Form";
 import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
 import Product from "./pages/Product/Product";
