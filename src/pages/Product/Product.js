@@ -1,7 +1,8 @@
 // import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 // Import funções React
 import * as React from "react";
+import axios from "axios"
 // Import funções Material UI
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -10,8 +11,31 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-function Product({ stock }) {
+function Product({ stock, setRerender }) {
   const params = useParams();
+  const navigate = useNavigate()
+
+  async function handleDelete(){
+    try {
+      await axios.delete(`https://ironrest.herokuapp.com/kols/${params._id}`)
+      navigate('/products')
+    } catch (error) {
+      console.log(error)
+    }
+    setRerender(true)
+  }
+
+  async function handleEdit() {
+    try {
+
+      navigate(`/product/${params._id}`)
+
+    } catch (error) {
+      console.log(error)
+    }
+    setRerender(true)
+  }
+
 
   return (
     <div>
@@ -58,9 +82,9 @@ function Product({ stock }) {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small">Editar</Button>
-                <Button size="small">Apagar</Button>
-                <Link to="/products">
+                <Button onClick={handleEdit}size="small">Editar</Button>
+                <Button onCLick={handleDelete} size="small">Apagar</Button>
+                <Link to={`/editProduct/${params._id}`}>
                   <Button size="small">Voltar</Button>
                 </Link>
               </CardActions>

@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useEffect } from 'react'
 
-function Products({ stock }) {
+function Products({ stock, setRerender }) {
+
+  useEffect(() => {
+    setRerender(true)
+  })
+
   return (
     <div className="cards">
       {stock.map(product => {

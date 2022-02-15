@@ -33,8 +33,7 @@ function Form() {
 
         try {
             const result = axios.post('https://ironrest.herokuapp.com/kols', form)
-            console.log(form)
-            //Navigate('/products')
+            Navigate('/products')
         } catch (error) {
             console.log(error)
         }
@@ -135,3 +134,6 @@ function Form() {
 }
 
 export default Form
+
+
+ 

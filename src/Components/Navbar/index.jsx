@@ -20,7 +20,7 @@ export function Navbar() {
   return (
     <Box sx={{ width: 360 }}>
       <BottomNavigation
-        showLabels
+        showlabels= "true"
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
