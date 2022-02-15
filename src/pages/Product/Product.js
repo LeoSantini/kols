@@ -2,7 +2,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 // Import funções React
 import * as React from "react";
-import axios from "axios"
+import axios from "axios";
 // Import funções Material UI
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -10,32 +10,41 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import EditIcon from "@mui/icons-material/Edit";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function Product({ stock, setRerender }) {
   const params = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  async function handleDelete(){
+  async function handleDelete() {
     try {
-      await axios.delete(`https://ironrest.herokuapp.com/kols/${params._id}`)
-      navigate('/products')
+      await axios.delete(`https://ironrest.herokuapp.com/kols/${params._id}`);
+      navigate("/products");
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    setRerender(true)
+    setRerender(true);
   }
 
   async function handleEdit() {
     try {
-
-      navigate(`/product/${params._id}`)
-
+      navigate(`/product/${params._id}`);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    setRerender(true)
+    setRerender(true);
   }
 
+  const theme = createTheme({
+    palette: {
+      neutral: {
+        main: "#495371",
+      },
+    },
+  });
 
   return (
     <div>
@@ -81,12 +90,41 @@ function Product({ stock, setRerender }) {
                   Valor de venda: R$ {product.sale_value},00
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Button onClick={handleEdit}size="small">Editar</Button>
-                <Button onCLick={handleDelete} size="small">Apagar</Button>
-                <Link to={`/editProduct/${params._id}`}>
-                  <Button size="small">Voltar</Button>
+              <CardActions sx={{ justifyContent: "space-between" }}>
+                <Link
+                  to={`/editProduct/${params._id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <ThemeProvider theme={theme}>
+                    <Button
+                      variant="outlined"
+                      startIcon={<ArrowBackIcon />}
+                      color="neutral"
+                      size="small"
+                    >
+                      Voltar
+                    </Button>
+                  </ThemeProvider>
                 </Link>
+                <Button
+                  variant="outlined"
+                  startIcon={<DeleteForeverIcon />}
+                  color="error"
+                  size="small"
+                  onClick={handleDelete}
+                  style={{ margin: 0 }}
+                >
+                  Apagar
+                </Button>
+                <Button
+                  variant="outlined"
+                  startIcon={<EditIcon />}
+                  color="success"
+                  size="small"
+                  onClick={handleEdit}
+                >
+                  Editar
+                </Button>
               </CardActions>
             </Card>
           );
