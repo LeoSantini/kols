@@ -7,19 +7,46 @@ function Products({ stock, setRerender }) {
     setRerender(true)
   })
 
+// Import table Material UI
+import * as React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+
+function Products({ stock }) {
   return (
-    <div className="cards">
-      {stock.map(product => {
-        return (
-          <div className="card" key={product._id}>
-            <Link to={`/product/${product._id}`}>ver mais</Link>
-            <p>Nome: {product.name}</p>
-            <p>Valor de venda: {product.sale_value}</p>
-            <p>Fornecedor: {product.supplier}</p>
-            <img src={product.image} alt={product.name}></img>
-          </div>
-        );
-      })}
+    <div>
+      <TableContainer component={Paper}>
+        <Table sx={{ maxWidth: 360 }} size="small" aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center">Part Number</TableCell>
+              <TableCell align="center">Item</TableCell>
+              <TableCell align="center">Quantidade</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {stock.map(product => (
+              <TableRow
+                key={product._id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row" align="center">
+                  {product.part_number}
+                </TableCell>
+                <Link to={`/product/${product._id}`}>
+                  <TableCell align="center">{product.name}</TableCell>
+                </Link>
+                <TableCell align="center">{product.quantity}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 }

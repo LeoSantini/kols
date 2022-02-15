@@ -1,139 +1,212 @@
-import axios from 'axios'
-import  {useState, useEffect} from 'react'
-import { useNavigate} from 'react-router-dom'
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+// Import form Material UI
+import * as React from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormLabel from "@mui/material/FormLabel";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Radio from "@mui/material/Radio";
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
+import BackspaceIcon from "@mui/icons-material/Backspace";
+import Stack from "@mui/material/Stack";
 
 function Form() {
-    const Navigate = useNavigate()
-    const [form, setForm] = useState({
-        "name": "",
-		"description": "",
-		"quantity": 0,
-		"purchase_price": 0,
-		"sale_value": 0,
-		"part_number": "",
-		"supplier": "",
-		"resupply_point": 0,
-		"category": "",
-		"image": ""
-    })
+  const Navigate = useNavigate();
 
-    function HandleChange(event) {
-        setForm({...form, [event.target.name]:event.target.value})
-        console.log(form)
+  const [form, setForm] = useState({
+    name: "",
+    description: "",
+    quantity: 0,
+    purchase_price: 0,
+    sale_value: 0,
+    part_number: "",
+    supplier: "",
+    resupply_point: 0,
+    category: "",
+    image: "",
+  });
+
+  function HandleChange(event) {
+    setForm({ ...form, [event.target.name]: event.target.value });
+    console.log(form);
+  }
+
+  function HandleSubmit(event) {
+    for (let key in form) {
+      if (!form[key]) {
+        window.alert(`Preencher o campo ${key}`);
+        return;
+      }
     }
+    event.preventDefault();
 
     function HandleSubmit(event) {
-        for (let key in form) {
-            if (!form[key]){
-                window.alert(`Preencher o campo ${key}`);
-                return;
-            }
+      for (let key in form) {
+        if (!form[key]) {
+          window.alert(`Preencher o campo ${key}`);
+          return;
         }
-        event.preventDefault()
+      }
+      event.preventDefault();
 
-        try {
-            const result = axios.post('https://ironrest.herokuapp.com/kols', form)
-            Navigate('/products')
-        } catch (error) {
-            console.log(error)
-        }
+      try {
+        const result = axios.post("https://ironrest.herokuapp.com/kols", form);
+        Navigate("/products");
+      } catch (error) {
+        console.log(error);
+      }
     }
+  }
 
-    return (
-        <div>
-            <form onSubmit={HandleSubmit}>
-                <label htmlFor="nome">nome</label>
-                <input 
-                    id="nome"
-                    onChange={HandleChange}
-                    name='name'
-                    value={form.name}
-                />
-                <label htmlFor="descrição">descrição</label>
-                <input 
-                    id="descrição"
-                    onChange={HandleChange}
-                    name='description'
-                    value={form.description}
-                />
-                <label htmlFor="quantidade">quantidade</label>
-                <input 
-                    id="quantidade"
-                    onChange={HandleChange}
-                    name='quantity'
-                    value={form.quantity}
-                    type='number'
-                />
-
-                <label htmlFor="">purchase_price</label>
-                <input 
-                    id="purchase_price"
-                    onChange={HandleChange}
-                    name='purchase_price'
-                    value={form.purchase_price}
-                    type='number'
-                />
-
-                <label htmlFor="">sale_value</label>
-                <input 
-                    id="sale_value"
-                    onChange={HandleChange}
-                    name='sale_value'
-                    value={form.sale_value}
-                    type='number'
-                />
-                
-                <label htmlFor="">part_number</label>
-                <input 
-                    id="part_number"
-                    onChange={HandleChange}
-                    name='part_number'
-                    value={form.part_number}
-                />
-                
-                <label htmlFor="">supplier</label>
-                <input 
-                    id="supplier"
-                    onChange={HandleChange}
-                    name='supplier'
-                    value={form.supplier}
-                />
-                
-                <label htmlFor="">resupply_point</label>
-                <input 
-                    id="resupply_point"
-                    onChange={HandleChange}
-                    name='resupply_point'
-                    value={form.resupply_point}
-                    type='number'
-                />
-
-                <label htmlFor="category">category</label>
-                <select 
-                    onChange={HandleChange} 
-                    id="category"
-                    name='category'>
-    
-                    <option value='celular'>celular</option>
-                    <option value='livros'>livros</option>
-                    <option value='roupas'>roupas</option>
-                </select> 
-
-                <label htmlFor="image">image</label>
-                <input 
-                    id="image"
-                    name='image'
-                    onChange={HandleChange}
-                />
-
-                <button type='submit'>Salvar</button>
-                
-            </form>
-        </div>
-    )
+  return (
+    <div>
+      <Box
+        component="form"
+        sx={{
+          "& > :not(style)": { m: 1, maxWidth: 350 },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField
+          id="outlined-basic"
+          label="Nome do item"
+          variant="outlined"
+          onChange={HandleChange}
+          name="name"
+          value={form.name}
+          fullWidth
+        />
+        <TextField
+          id="outlined-basic"
+          label="Descrição"
+          variant="outlined"
+          onChange={HandleChange}
+          name="description"
+          value={form.description}
+          multiline
+          fullWidth
+        />
+        <TextField
+          id="outlined-basic"
+          label="Quantidade"
+          variant="outlined"
+          onChange={HandleChange}
+          name="quantity"
+          value={form.quantity}
+          type="number"
+          fullWidth
+        />
+        <TextField
+          id="outlined-basic"
+          label="Preço de compra"
+          onChange={HandleChange}
+          name="purchase_price"
+          value={form.purchase_price}
+          type="number"
+          fullWidth
+        />
+        <TextField
+          id="outlined-basic"
+          label="Valor de venda"
+          onChange={HandleChange}
+          name="sale_value"
+          value={form.sale_value}
+          type="number"
+          fullWidth
+        />
+        <TextField
+          id="outlined-basic"
+          label="Part number"
+          onChange={HandleChange}
+          name="part_number"
+          value={form.part_number}
+          fullWidth
+        />
+        <TextField
+          id="outlined-basic"
+          label="Fornecedor"
+          onChange={HandleChange}
+          name="supplier"
+          value={form.supplier}
+          fullWidth
+        />
+        <TextField
+          id="outlined-basic"
+          label="Ponto de compra"
+          onChange={HandleChange}
+          name="resupply_point"
+          value={form.resupply_point}
+          type="number"
+          fullWidth
+        />
+        <FormControl>
+          <FormLabel id="demo-radio-buttons-group-label">Categoria</FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="female"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel
+              value="celular"
+              control={<Radio />}
+              label="Celular"
+              onChange={HandleChange}
+              name="category"
+            />
+            <FormControlLabel
+              value="livros"
+              control={<Radio />}
+              label="Livros"
+              onChange={HandleChange}
+              name="category"
+            />
+            <FormControlLabel
+              value="roupas"
+              control={<Radio />}
+              label="Roupas"
+              onChange={HandleChange}
+              name="category"
+            />
+          </RadioGroup>
+        </FormControl>
+        <TextField
+          id="outlined-basic"
+          label="Imagem"
+          onChange={HandleChange}
+          name="image"
+          fullWidth
+        />
+      </Box>
+      <Stack direction="row" spacing={2}>
+        <Button
+          variant="outlined"
+          startIcon={<BackspaceIcon />}
+          color="error"
+          size="large"
+          disabled
+        >
+          Clear
+        </Button>
+        <Button
+          variant="contained"
+          endIcon={<SendIcon />}
+          type="submit"
+          onClick={HandleSubmit}
+          color="success"
+          size="large"
+        >
+          Send
+        </Button>
+      </Stack>
+    </div>
+  );
 }
 
-export default Form
-
-
- 
+export default Form;
