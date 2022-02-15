@@ -26,9 +26,9 @@ export function Navbar() {
           setValue(newValue);
         }}
       >
-        <Link to="/">
+        <a href="/">
           <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        </Link>
+        </a>
         <Link to="/products">
           <BottomNavigationAction label="Products" icon={<InventoryIcon />} />
         </Link>
