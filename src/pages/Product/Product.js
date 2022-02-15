@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 // Import funções React
 import * as React from "react";
 import axios from "axios";
+import uniqid from 'uniqid'
 // Import funções Material UI
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -29,15 +30,6 @@ function Product({ stock, setRerender }) {
     setRerender(true);
   }
 
-  async function handleEdit() {
-    try {
-      navigate(`/product/${params._id}`);
-    } catch (error) {
-      console.log(error);
-    }
-    setRerender(true);
-  }
-
   const theme = createTheme({
     palette: {
       neutral: {
@@ -54,7 +46,7 @@ function Product({ stock, setRerender }) {
         })
         .map(product => {
           return (
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }} key={uniqid()}>
               <CardMedia
                 component="img"
                 height="345"
@@ -92,7 +84,7 @@ function Product({ stock, setRerender }) {
               </CardContent>
               <CardActions sx={{ justifyContent: "space-between" }}>
                 <Link
-                  to={`/editProduct/${params._id}`}
+                  to={`/products`}
                   style={{ textDecoration: "none" }}
                 >
                   <ThemeProvider theme={theme}>
@@ -121,9 +113,8 @@ function Product({ stock, setRerender }) {
                   startIcon={<EditIcon />}
                   color="success"
                   size="small"
-                  onClick={handleEdit}
                 >
-                  Editar
+                <Link to={`/editProduct/${params._id}`}>Editar</Link>
                 </Button>
               </CardActions>
             </Card>

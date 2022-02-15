@@ -16,7 +16,7 @@ import SendIcon from "@mui/icons-material/Send";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import Stack from "@mui/material/Stack";
 
-function Form() {
+function Form({ setRerender }) {
   const Navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -47,11 +47,27 @@ function Form() {
     event.preventDefault();
 
     try {
-      const result = axios.post("https://ironrest.herokuapp.com/kols", form);
+      axios.post("https://ironrest.herokuapp.com/kols", form);
       Navigate("/products");
+      setRerender(true)
     } catch (error) {
       console.log(error);
     }
+  }
+
+  function HandleClear() {
+    setForm({
+      name: "",
+      description: "",
+      quantity: 0,
+      purchase_price: 0,
+      sale_value: 0,
+      part_number: "",
+      supplier: "",
+      resupply_point: 0,
+      category: "",
+      image: "",
+    })
   }
 
   return (
@@ -183,6 +199,7 @@ function Form() {
           label="Imagem"
           onChange={HandleChange}
           name="image"
+          value={form.image}
           fullWidth
           required
         />
@@ -198,7 +215,7 @@ function Form() {
           startIcon={<BackspaceIcon />}
           color="error"
           size="large"
-          disabled
+          onClick={HandleClear}
         >
           Clear
         </Button>
