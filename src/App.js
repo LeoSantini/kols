@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 
 // Import de componentes
 /* import Navbar from "./Components/Navbar/index";
-import { Product } from './src/Components/Product/index';
 import { Form } from './src/Components/Form/index' */
 import Home from "./pages/Home/Home"
 import Products from "./pages/Products/Products"
 import Product from "./pages/Product/Product"
+import Form from "./pages/Form/index"
 
 import axios from "axios"
 
@@ -32,7 +32,7 @@ function App() {
       }
     }
     fetchStock()
-  }, [isLoading])
+  }, [])
   console.log(stock)
 
   return (
@@ -42,7 +42,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products stock={stock} />} />
         <Route path="product/:_id" element={<Product stock={stock} />} />
-        {/*<Route path="/addProduct" element={<Form />} / */}
+        <Route path="/addProduct" element={<Form />}/>
       </Routes>
     </BrowserRouter>
   );

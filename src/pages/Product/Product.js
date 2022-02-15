@@ -1,4 +1,3 @@
-import {useEffect, useState} from 'react'
 import {useParams, Link} from 'react-router-dom'
 
 function Product({stock}) {
@@ -16,10 +15,12 @@ function Product({stock}) {
                     <div key={product.id}>
                         <p>Nome: {product.name}</p>
                         <p>ID: {product._id}</p>
+                        <p>Fornecedor: {product.supplier}</p>
                         <p>Valor de compra: {product.purchase_price}</p>
                         <p>Valor de venda: {product.sale_value}</p>
-                        <p>Fornecedor: {product.supplier}</p>
                         <p>Categoria: {product.category}</p>
+                        <p>Ponto de Pedido: {product.resupply_point}</p>
+                        <p>Quantidade: {product.quantity}</p>
                         <img src={product.image} alt={product.name}></img>
                     </div>
                 )
