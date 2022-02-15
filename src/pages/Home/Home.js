@@ -1,11 +1,10 @@
-import {Link} from "react-router-dom"
 import React from 'react'
-
+import ChangeStock from '../../Components/ChangeStock/ChangeStock'
 
 function Home() {
     return (
         <div>
-            <Link to="/products"> PRODUTOS </Link>
+            <ChangeStock />
         </div>
     )
 }
