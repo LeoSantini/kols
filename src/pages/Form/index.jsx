@@ -15,6 +15,7 @@ import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import Stack from "@mui/material/Stack";
+import { Typography } from "@mui/material";
 
 function Form({ setRerender }) {
   const Navigate = useNavigate();
@@ -71,11 +72,39 @@ function Form({ setRerender }) {
   }
 
   return (
-    <div>
+    <>
+      <Box
+        sx={{
+          minWidth: 360,
+          maxWidth: 420,
+        }}
+      >
+        <Typography
+          variant="h6"
+          component="div"
+          align="center"
+          sx={{
+            bgcolor: "rgba(211, 211, 211, 0.5)",
+            marginTop: 0.5,
+          }}
+        >
+          Cadastro de Produto
+        </Typography>
+        <hr
+          style={{
+            borderColor: "red",
+            borderWidth: "auto",
+          }}
+        ></hr>
+      </Box>
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { maxWidth: 360, marginTop: 1 },
+          "& > :not(style)": {
+            minWidth: 360,
+            maxWidth: 420,
+            marginTop: 1.5,
+          },
         }}
         noValidate
         autoComplete="off"
@@ -170,6 +199,11 @@ function Form({ setRerender }) {
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="female"
             name="radio-buttons-group"
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
           >
             <FormControlLabel
               value="celular"
@@ -208,7 +242,7 @@ function Form({ setRerender }) {
         direction="row"
         justifyContent={"center"}
         spacing={6}
-        sx={{ marginTop: 1 }}
+        sx={{ marginTop: 1, marginBottom: 8 }}
       >
         <Button
           variant="outlined"
@@ -230,7 +264,7 @@ function Form({ setRerender }) {
           Send
         </Button>
       </Stack>
-    </div>
+    </>
   );
 }
 

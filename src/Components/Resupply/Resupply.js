@@ -13,23 +13,29 @@ import Paper from "@mui/material/Paper";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 
-function Resuply({ stock, isLoading }) {
+function Resupply({ stock, isLoading }) {
   return (
-    <div>
-      <Box>
+    <>
+      <Box sx={{ margin: 0, minWidth: 360, maxWidth: 420 }}>
         <Typography
           variant="h6"
           component="div"
           align="center"
-          sx={{ bgcolor: "rgba(211, 211, 211, 0.5)", marginTop: 0.5 }}
+          sx={{ bgcolor: "rgba(211, 211, 211, 0.5)", margin: 0 }}
         >
           Resupply Point
         </Typography>
-        <hr style={{ borderColor: "red", margin: 1 }}></hr>
+
+        <hr
+          style={{
+            borderColor: "red",
+            borderWidth: "auto",
+          }}
+        ></hr>
       </Box>
       {!isLoading && (
-        <TableContainer component={Paper} sx={{ maxWidth: 344 }}>
-          <Table sx={{ maxWidth: 344 }} size="small" aria-label="a dense table">
+        <TableContainer component={Paper} sx={{ minWidth: 360, maxWidth: 420 }}>
+          <Table sx={{ width: "100%" }} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow sx={{ bgcolor: "#F1E0AC" }}>
                 <TableCell
@@ -108,24 +114,8 @@ function Resuply({ stock, isLoading }) {
           </Table>
         </TableContainer>
       )}
-
-      {/* stock
-                .filter((product) => {
-                    return product.quantity <= product.resupply_point
-                })
-                .map((product) => {
-                    return (
-                        <div key={uniqid()}>
-                            <p>Produto: {product.name}</p>
-                            <span>Qnt: {product.quantity} </span>
-                            <span>Ponto de Pedido: {product.resupply_point} </span>
-                        </div>
-
-                        
-                    )
-                }) */}
-    </div>
+    </>
   );
 }
 
-export default Resuply;
+export default Resupply;
