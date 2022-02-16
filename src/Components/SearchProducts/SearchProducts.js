@@ -18,7 +18,8 @@ function SearchProducts({ search, setSearch }) {
         component="form"
         sx={{
           "& > :not(style)": {
-            maxWidth: 344,
+            minWidth: 360,
+            maxWidth: 420,
             margin: 0,
             marginTop: 1,
             marginBottom: 1,

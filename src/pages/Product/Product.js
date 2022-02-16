@@ -46,7 +46,7 @@ function Product({ stock, setRerender }) {
         })
         .map(product => {
           return (
-            <Card sx={{ maxWidth: 345 }} key={uniqid()}>
+            <Card sx={{ minWidth: 360, maxWidth: 420 }} key={uniqid()}>
               <CardMedia
                 component="img"
                 height="345"
@@ -57,7 +57,8 @@ function Product({ stock, setRerender }) {
                 <CardContent
                   sx={{
                     bgcolor: "neutral.bg",
-                    maxWidth: 344,
+                    minWidth: 360,
+                    maxWidth: 420,
                     padding: 1,
                     fontFamily: "Roboto Helvetica Arial sans-serif",
                   }}
@@ -102,6 +103,8 @@ function Product({ stock, setRerender }) {
                 sx={{
                   justifyContent: "space-between",
                   bgcolor: "rgba(211,211,211,0.5)",
+                  alignItems: "flex-start",
+                  paddingBottom: 8,
                 }}
               >
                 <Link
