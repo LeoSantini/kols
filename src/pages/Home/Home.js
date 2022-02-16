@@ -1,14 +1,12 @@
-import React from 'react'
-import ChangeStock from '../../Components/ChangeStock/ChangeStock'
-import Resuply from '../../Components/Resuply/Resuply'
+import React from "react";
+import Resuply from "../../Components/Resuply/Resuply";
 
-function Home({stock, isLoading}) {
-    return (
-        <div>
-            <ChangeStock />
-            <Resuply stock={stock} isLoading={isLoading}/>
-        </div>
-    )
+function Home({ stock, isLoading }) {
+  return (
+    <div>
+      <Resuply stock={stock} isLoading={isLoading} />
+    </div>
+  );
 }
 
-export default Home
+export default Home;

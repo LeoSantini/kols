@@ -49,7 +49,7 @@ function Form({ setRerender }) {
     try {
       axios.post("https://ironrest.herokuapp.com/kols", form);
       Navigate("/products");
-      setRerender(true)
+      setRerender(true);
     } catch (error) {
       console.log(error);
     }
@@ -67,7 +67,7 @@ function Form({ setRerender }) {
       resupply_point: 0,
       category: "",
       image: "",
-    })
+    });
   }
 
   return (
@@ -196,7 +196,7 @@ function Form({ setRerender }) {
         </FormControl>
         <TextField
           id="outlined-basic"
-          label="Imagem"
+          label="URL Imagem"
           onChange={HandleChange}
           name="image"
           value={form.image}
