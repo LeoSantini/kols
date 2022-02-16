@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 // Import funções Material UI
 import Box from "@mui/material/Box";
