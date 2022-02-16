@@ -17,11 +17,7 @@ function Products({ stock }) {
 
   return (
     <div>
-<<<<<<< HEAD
-      <SearchProducts search={search} setSearch={setSearch}/>
-=======
       <SearchProducts search={search} setSearch={setSearch} />
->>>>>>> d95d32ace94c12265318c5465727c05fb25897c5
 
       <TableContainer component={Paper} sx={{ maxWidth: 344 }}>
         <Table sx={{ maxWidth: 350 }} size="small" aria-label="a dense table">
@@ -30,7 +26,10 @@ function Products({ stock }) {
               <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
                 Part Number
               </TableCell>
-              <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
+              <TableCell
+                align="left"
+                sx={{ color: "gray", padding: 0.3, paddingLeft: 2 }}
+              >
                 Item
               </TableCell>
               <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
