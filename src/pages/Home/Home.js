@@ -9,7 +9,7 @@ function Home({ stock, isLoading }) {
     return (
         <>{!isLoading &&
             <>
-                <Resuply stock={stock} isLoading={isLoading} />
+                <Resupply stock={stock} isLoading={isLoading} />
                 <Profit stock={stock} isLoading={isLoading} />
                 <TotalStock stock={stock} isLoading={isLoading} />
             </>
