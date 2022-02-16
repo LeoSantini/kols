@@ -35,6 +35,7 @@ function Product({stock, setRerender}) {
     palette: {
       neutral: {
         main: "#495371",
+        bg: "lightgray",
       },
     },
   });
@@ -54,35 +55,51 @@ function Product({stock, setRerender}) {
                 image={product.image}
                 alt={product.name}
               />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {product.name}
-                </Typography>
-                <Typography gutterBottom variant="caption text" component="div">
-                  Categoria: {product.category}
-                </Typography>
-                <Typography gutterBottom variant="body 2" component="div">
-                  Descrição: {product.description}
-                </Typography>
-                <Typography gutterBottom variant="body 2" component="div">
-                  Fabricante: {product.supplier}
-                </Typography>
-                <Typography gutterBottom variant="body 2" component="div">
-                  Part number: {product.part_number}
-                </Typography>
-                <Typography gutterBottom variant="body 2" component="div">
-                  Ponto de Compra: {product.resupply_point}
-                </Typography>
-                <Typography gutterBottom variant="body 2" component="div">
-                  Quantidade: {product.quantity}
-                </Typography>
-                <Typography gutterBottom variant="body 2" component="div">
-                  Preço de compra: R$ {product.purchase_price},00
-                </Typography>
-                <Typography gutterBottom variant="body 2" component="div">
-                  Valor de venda: R$ {product.sale_value},00
-                </Typography>
-              </CardContent>
+              <ThemeProvider theme={theme}>
+                <CardContent
+                  sx={{
+                    bgcolor: "neutral.bg",
+                    maxWidth: 344,
+                    padding: 1,
+                    fontFamily: "Roboto Helvetica Arial sans-serif",
+                  }}
+                >
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    sx={{ textAlign: "center" }}
+                  >
+                    {product.name}
+                    <hr style={{ borderColor: "red" }}></hr>
+                  </Typography>
+                  <Typography gutterBottom variant="body2" component="div">
+                    <strong>Categoria:</strong> {product.category}
+                  </Typography>
+                  <Typography gutterBottom variant="body2" component="div">
+                    <strong>Descrição:</strong> {product.description}
+                  </Typography>
+                  <Typography gutterBottom variant="body2" component="div">
+                    <strong>Fabricante:</strong> {product.supplier}
+                  </Typography>
+                  <Typography gutterBottom variant="body2" component="div">
+                    <strong>Part number:</strong> {product.part_number}
+                  </Typography>
+                  <Typography gutterBottom variant="body2" component="div">
+                    <strong>Ponto de Compra:</strong> {product.resupply_point}
+                  </Typography>
+                  <Typography gutterBottom variant="body2" component="div">
+                    <strong>Quantidade:</strong> {product.quantity}
+                  </Typography>
+                  <Typography gutterBottom variant="body2" component="div">
+                    <strong>Preço de compra:</strong> R${" "}
+                    {product.purchase_price},00
+                  </Typography>
+                  <Typography gutterBottom variant="body2" component="div">
+                    <strong>Valor de venda:</strong> R$ {product.sale_value},00
+                  </Typography>
+                </CardContent>
+              </ThemeProvider>
               <CardActions sx={{ justifyContent: "space-between" }}>
                 <Link to={`/products`} style={{ textDecoration: "none" }}>
                   <ThemeProvider theme={theme}>

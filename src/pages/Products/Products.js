@@ -15,24 +15,36 @@ import Paper from "@mui/material/Paper";
 function Products({ stock, isLoading }) {
   const [search, setSearch] = useState("");
 
-
   return (
     <div>
-      {!isLoading &&
+      {!isLoading && (
         <div>
           <SearchProducts search={search} setSearch={setSearch} />
 
           <TableContainer component={Paper} sx={{ maxWidth: 344 }}>
-            <Table sx={{ maxWidth: 350 }} size="small" aria-label="a dense table">
+            <Table
+              sx={{ maxWidth: 350 }}
+              size="small"
+              aria-label="a dense table"
+            >
               <TableHead>
                 <TableRow sx={{ bgcolor: "#F1E0AC" }}>
-                  <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
+                  <TableCell
+                    align="center"
+                    sx={{ color: "gray", padding: 0.3 }}
+                  >
                     Part Number
                   </TableCell>
-                  <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
+                  <TableCell
+                    align="center"
+                    sx={{ color: "gray", padding: 0.3 }}
+                  >
                     Item
                   </TableCell>
-                  <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
+                  <TableCell
+                    align="center"
+                    sx={{ color: "gray", padding: 0.3 }}
+                  >
                     Quantidade
                   </TableCell>
                 </TableRow>
@@ -100,9 +112,8 @@ function Products({ stock, isLoading }) {
               </TableBody>
             </Table>
           </TableContainer>
-
         </div>
-      }
+      )}
       {isLoading && <p>Carregando...</p>}
     </div>
   );
