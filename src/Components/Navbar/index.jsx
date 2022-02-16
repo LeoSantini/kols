@@ -18,10 +18,17 @@ export function Navbar() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box sx={{ width: 344 }}>
+    <Box
+      sx={{
+        width: "100%",
+        position: "fixed",
+        bottom: 0,
+        zIndex: 1000,
+      }}
+    >
       <BottomNavigation
-        sx={{ bgcolor: "#495371" }}
-        
+        sx={{ bgcolor: "#495371", minWidth: 360, maxWidth: 420 }}
+        showlabels="true"
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);

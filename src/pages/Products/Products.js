@@ -21,9 +21,12 @@ function Products({ stock, isLoading }) {
         <div>
           <SearchProducts search={search} setSearch={setSearch} />
 
-          <TableContainer component={Paper} sx={{ maxWidth: 344 }}>
+          <TableContainer
+            component={Paper}
+            sx={{ minWidth: 360, maxWidth: 420 }}
+          >
             <Table
-              sx={{ maxWidth: 344 }}
+              sx={{ width: "100%" }}
               size="small"
               aria-label="a dense table"
             >
