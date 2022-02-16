@@ -30,13 +30,12 @@ function App() {
     }
     fetchStock();
   }, [rerender]);
-  console.log(stock);
 
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home stock={stock}/>} />
         <Route path="/products" element={<Products stock={stock} setRerender={setRerender}/>} />
         <Route path="/product/:_id" element={<Product stock={stock} setRerender={setRerender} />} />
         <Route path="/addProduct" element={<Form setRerender={setRerender}/>} />

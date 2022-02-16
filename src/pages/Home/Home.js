@@ -1,10 +1,12 @@
 import React from 'react'
 import ChangeStock from '../../Components/ChangeStock/ChangeStock'
+import Resuply from '../../Components/Resuply/Resuply'
 
-function Home() {
+function Home({stock}) {
     return (
         <div>
             <ChangeStock />
+            <Resuply stock={stock}/>
         </div>
     )
 }
