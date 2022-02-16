@@ -1,5 +1,5 @@
 import React from "react";
-import Resuply from "../../Components/Resuply/Resuply";
+import Resupply from "../../Components/Resupply/Resupply";
 import Profit from "../../Components/Profit/Profit"
 import TotalStock from "../../Components/TotalStock/TotalStock"
 
