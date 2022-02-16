@@ -52,8 +52,7 @@ function Products({ stock, isLoading }) {
               <TableBody>
                 {stock
                   .filter(product => {
-                    return product.name
-                      .toLowerCase()
+                    return product.name.toLowerCase()
                       .includes(search.toLowerCase());
                   })
                   .map(product => (

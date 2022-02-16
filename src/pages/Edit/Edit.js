@@ -212,7 +212,6 @@ function Edit({ setRerender }) {
           name="image"
           value={form.image}
           fullWidth
-          required
         />
       </Box>
       <Stack
