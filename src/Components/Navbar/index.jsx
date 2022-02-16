@@ -27,13 +27,13 @@ export function Navbar() {
           setValue(newValue);
         }}
       >
-        <a href="/">
+        <Link to="/">
           <BottomNavigationAction
             label="Home"
             icon={<HomeIcon />}
             sx={{ color: "white" }}
           />
-        </a>
+        </Link>
         <Link to="/products">
           <BottomNavigationAction
             label="Products"

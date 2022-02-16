@@ -23,7 +23,7 @@ function Products({ stock, isLoading }) {
 
           <TableContainer component={Paper} sx={{ maxWidth: 344 }}>
             <Table
-              sx={{ maxWidth: 350 }}
+              sx={{ maxWidth: 344 }}
               size="small"
               aria-label="a dense table"
             >
@@ -33,19 +33,19 @@ function Products({ stock, isLoading }) {
                     align="center"
                     sx={{ color: "gray", padding: 0.3 }}
                   >
-                    Part Number
+                    <strong>Part Number</strong>
+                  </TableCell>
+                  <TableCell
+                    align="left"
+                    sx={{ color: "gray", padding: 0.3, paddingLeft: 2 }}
+                  >
+                    <strong>Item</strong>
                   </TableCell>
                   <TableCell
                     align="center"
                     sx={{ color: "gray", padding: 0.3 }}
                   >
-                    Item
-                  </TableCell>
-                  <TableCell
-                    align="center"
-                    sx={{ color: "gray", padding: 0.3 }}
-                  >
-                    Quantidade
+                    <strong>Quantidade</strong>
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -84,8 +84,8 @@ function Products({ stock, isLoading }) {
                         style={{ textDecoration: "none" }}
                       >
                         <TableCell
-                          align="center"
-                          size="large"
+                          align="left"
+                          size="medium"
                           sx={{
                             color: "black",
                             paddingTop: 0.5,
