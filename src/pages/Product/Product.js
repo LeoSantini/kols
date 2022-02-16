@@ -105,19 +105,19 @@ function Product({ stock, setRerender }) {
                 >
                   Apagar
                 </Button>
-                <Button
-                  variant="outlined"
-                  startIcon={<EditIcon />}
-                  color="success"
-                  size="small"
+                <Link
+                  to={`/editProduct/${params._id}`}
+                  style={{ textDecoration: "none" }}
                 >
-                  <Link
-                    to={`/editProduct/${params._id}`}
-                    style={{ textDecoration: "none" }}
+                  <Button
+                    variant="outlined"
+                    startIcon={<EditIcon />}
+                    color="success"
+                    size="small"
                   >
                     Editar
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           );
