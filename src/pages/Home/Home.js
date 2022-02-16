@@ -1,17 +1,12 @@
-import React from 'react'
-import Resuply from '../../Components/Resuply/Resuply'
-import Profit from '../../Components/Profit/Profit'
-import TotalStock from '../../Components/TotalStock/TotalStock'
+import React from "react";
+import Resuply from "../../Components/Resuply/Resuply";
 
-function Home({stock, isLoading}) {
-
-    return (
-        <div>
-            <Resuply stock={stock} isLoading={isLoading}/>
-            <Profit stock={stock} isLoading={isLoading}/>
-            <TotalStock stock={stock} isLoading={isLoading}/>
-        </div>
-    )
+function Home({ stock, isLoading }) {
+  return (
+    <div>
+      <Resuply stock={stock} isLoading={isLoading} />
+    </div>
+  );
 }
 
-export default Home
+export default Home;
