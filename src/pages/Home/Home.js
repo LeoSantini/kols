@@ -1,14 +1,21 @@
 import React from "react";
-import Profit from "../../Components/Profit/Profit";
 import Resupply from "../../Components/Resupply/Resupply";
+import Profit from "../../Components/Profit/Profit"
+import TotalStock from "../../Components/TotalStock/TotalStock"
 
 function Home({ stock, isLoading }) {
-  return (
-    <div>
-      <Resupply stock={stock} isLoading={isLoading} />
-      <Profit stock={stock} isLoading={isLoading} />
-    </div>
-  );
+
+
+    return (
+        <>{!isLoading &&
+            <>
+                <Resupply stock={stock} isLoading={isLoading} />
+                <Profit stock={stock} isLoading={isLoading} />
+                <TotalStock stock={stock} isLoading={isLoading} />
+            </>
+        }
+        </>
+    );
 }
 
 export default Home;

@@ -36,6 +36,7 @@ export function Navbar() {
       >
         <Link to="/">
           <BottomNavigationAction
+            showlabels='false'
             label="Home"
             icon={<HomeIcon />}
             sx={{ color: "white" }}
@@ -43,6 +44,8 @@ export function Navbar() {
         </Link>
         <Link to="/products">
           <BottomNavigationAction
+            showlabels='false'
+
             label="Products"
             icon={<InventoryIcon />}
             sx={{ color: "white" }}
@@ -50,6 +53,8 @@ export function Navbar() {
         </Link>
         <Link to="/addProduct">
           <BottomNavigationAction
+            showlabels='false'
+
             label="Add Product"
             icon={<AddIcon />}
             sx={{ color: "white" }}
