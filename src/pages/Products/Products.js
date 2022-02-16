@@ -1,12 +1,6 @@
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-import { useEffect, useState } from 'react'
-import uniqid from 'uniqid'
-import SearchProducts from '../../Components/SearchProducts/SearchProducts'
-=======
 import { useEffect } from "react";
 import uniqid from "uniqid";
->>>>>>> df13ad43e588a5fb51ccb8d09d22d9650036a3cb
 // Import table Material UI
 import * as React from "react";
 import Table from "@mui/material/Table";
@@ -23,13 +17,8 @@ function Products({ stock }) {
 
   return (
     <div>
-<<<<<<< HEAD
-      <SearchProducts search={search} setSearch={setSearch}/>
-
-      <TableContainer component={Paper}>
-=======
+    <Search search={search} setSearch={setSearch}/>
       <TableContainer component={Paper} sx={{ maxWidth: 344 }}>
->>>>>>> df13ad43e588a5fb51ccb8d09d22d9650036a3cb
         <Table sx={{ maxWidth: 350 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow sx={{ bgcolor: "#F1E0AC" }}>
