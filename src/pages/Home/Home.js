@@ -1,12 +1,15 @@
 import React from 'react'
-import ChangeStock from '../../Components/ChangeStock/ChangeStock'
 import Resuply from '../../Components/Resuply/Resuply'
+import Profit from '../../Components/Profit/Profit'
+import TotalStock from '../../Components/TotalStock/TotalStock'
 
 function Home({stock, isLoading}) {
+
     return (
         <div>
-            <ChangeStock />
             <Resuply stock={stock} isLoading={isLoading}/>
+            <Profit stock={stock} isLoading={isLoading}/>
+            <TotalStock stock={stock} isLoading={isLoading}/>
         </div>
     )
 }

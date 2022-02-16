@@ -38,7 +38,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home stock={stock} isLoading={isLoading}/>} />
+        <Route path="/" element={<Home stock={stock} isLoading={isLoading} setRerender={setRerender}/>} />
         <Route path="/products" element={<Products stock={stock} isLoading={isLoading}/>} />
         <Route path="/product/:_id" element={<Product stock={stock} setRerender={setRerender} />} />
         <Route path="/addProduct" element={<Form setRerender={setRerender}/>} />
