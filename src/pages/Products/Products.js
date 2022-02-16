@@ -15,76 +15,36 @@ import Paper from "@mui/material/Paper";
 function Products({ stock, isLoading }) {
   const [search, setSearch] = useState("");
 
-
   return (
     <div>
-<<<<<<< HEAD
-      <SearchProducts search={search} setSearch={setSearch} />
-
-      <TableContainer component={Paper} sx={{ maxWidth: 344 }}>
-        <Table sx={{ maxWidth: 350 }} size="small" aria-label="a dense table">
-          <TableHead>
-            <TableRow sx={{ bgcolor: "#F1E0AC" }}>
-              <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
-                Part Number
-              </TableCell>
-              <TableCell
-                align="left"
-                sx={{ color: "gray", padding: 0.3, paddingLeft: 2 }}
-              >
-                Item
-              </TableCell>
-              <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
-                Quantidade
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {stock
-              .filter(product => {
-                return product.name
-                  .toLowerCase()
-                  .includes(search.toLowerCase());
-              })
-              .map(product => (
-                <TableRow
-                  key={uniqid()}
-                  sx={{
-                    "&:last-child td, &:last-child th": {
-                      border: 0,
-                    },
-                    borderBottom: 0.1,
-                    borderBottomColor: "gray",
-                    borderWidth: 1,
-                  }}
-                >
-                  <TableCell
-                    align="center"
-                    sx={{
-                      color: "black",
-                      paddingTop: 0.5,
-                      paddingBottom: 0.5,
-                      border: "none",
-                    }}
-                  >
-                    {product.part_number}
-=======
-      {!isLoading &&
+      {!isLoading && (
         <div>
           <SearchProducts search={search} setSearch={setSearch} />
 
           <TableContainer component={Paper} sx={{ maxWidth: 344 }}>
-            <Table sx={{ maxWidth: 350 }} size="small" aria-label="a dense table">
+            <Table
+              sx={{ maxWidth: 350 }}
+              size="small"
+              aria-label="a dense table"
+            >
               <TableHead>
                 <TableRow sx={{ bgcolor: "#F1E0AC" }}>
-                  <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
+                  <TableCell
+                    align="center"
+                    sx={{ color: "gray", padding: 0.3 }}
+                  >
                     Part Number
->>>>>>> b606c77cf3cd573c8527f65102a56cf3258734f6
                   </TableCell>
-                  <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
+                  <TableCell
+                    align="center"
+                    sx={{ color: "gray", padding: 0.3 }}
+                  >
                     Item
                   </TableCell>
-                  <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
+                  <TableCell
+                    align="center"
+                    sx={{ color: "gray", padding: 0.3 }}
+                  >
                     Quantidade
                   </TableCell>
                 </TableRow>
@@ -152,9 +112,8 @@ function Products({ stock, isLoading }) {
               </TableBody>
             </Table>
           </TableContainer>
-
         </div>
-      }
+      )}
       {isLoading && <p>Carregando...</p>}
     </div>
   );
