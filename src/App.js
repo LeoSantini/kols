@@ -16,8 +16,10 @@ import axios from "axios";
 function App() {
   const [stock, setStock] = useState();
   const [rerender, setRerender] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    setIsLoading(true)
     async function fetchStock() {
       try {
         const result = await axios.get("https://ironrest.herokuapp.com/kols");
@@ -26,6 +28,7 @@ function App() {
         console.log(error);
       } finally {
         setRerender(false);
+        setIsLoading(false)
       }
     }
     fetchStock();
@@ -35,8 +38,8 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home stock={stock}/>} />
-        <Route path="/products" element={<Products stock={stock} setRerender={setRerender}/>} />
+        <Route path="/" element={<Home stock={stock} isLoading={isLoading}/>} />
+        <Route path="/products" element={<Products stock={stock} isLoading={isLoading}/>} />
         <Route path="/product/:_id" element={<Product stock={stock} setRerender={setRerender} />} />
         <Route path="/addProduct" element={<Form setRerender={setRerender}/>} />
         <Route path="/editProduct/:_id" element={<Edit setRerender={setRerender}/>} />
