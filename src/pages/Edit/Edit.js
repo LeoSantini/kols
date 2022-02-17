@@ -210,9 +210,9 @@ function Edit({ setRerender }) {
               name="category"
             />
             <FormControlLabel
-              value="livros"
+              value="acessório"
               control={<Radio />}
-              label="Livros"
+              label="Acessório"
               onChange={HandleChange}
               name="category"
             />

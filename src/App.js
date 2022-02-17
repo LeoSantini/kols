@@ -10,6 +10,9 @@ import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
 import Product from "./pages/Product/Product";
 import Edit from "./pages/Edit/Edit";
+import Contact from "./pages/Contact/Contact"
+import Logo from "./assets/image/Kols22.png"
+
 
 import axios from "axios";
 
@@ -36,6 +39,9 @@ function App() {
 
   return (
     <BrowserRouter>
+      <div style={{ display: 'flex', height: '67px', backgroundColor: 'white', minWidth: 365, maxWidth: 420, margin: 0, padding: 0 }}>
+        <img src={Logo} alt="logo"></img>
+      </div>
       <Routes>
         <Route
           path="/"
@@ -63,6 +69,7 @@ function App() {
           path="/editProduct/:_id"
           element={<Edit setRerender={setRerender} />}
         />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Navbar />
     </BrowserRouter>
