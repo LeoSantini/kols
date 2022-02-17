@@ -11,6 +11,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import { Typography } from "@mui/material";
 
 function Products({ stock, isLoading }) {
   const [search, setSearch] = useState("");
@@ -19,7 +21,23 @@ function Products({ stock, isLoading }) {
     <>
       {!isLoading && (
         <>
-          
+          <Box
+            sx={{
+              minWidth: 360,
+              maxWidth: 420,
+            }}
+          >
+            <Typography
+              variant="h6"
+              component="div"
+              align="center"
+              textAlign={"center"}
+              sx={{ fontWeight: 700, marginTop: 1.5 }}
+            >
+              Product List
+            </Typography>
+          </Box>
+
           <SearchProducts search={search} setSearch={setSearch} />
 
           <TableContainer
