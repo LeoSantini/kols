@@ -7,12 +7,13 @@ function Home({ stock, isLoading }) {
 
 
     return (
-        <>{!isLoading &&
-            <>
-                <Resupply stock={stock} isLoading={isLoading} />
-                <Profit stock={stock} isLoading={isLoading} />
-                <TotalStock stock={stock} isLoading={isLoading} />
-            </>
+        <>
+            {!isLoading &&
+                <>
+                    <Resupply stock={stock} isLoading={isLoading} />
+                    <Profit stock={stock} isLoading={isLoading} />
+                    <TotalStock stock={stock} isLoading={isLoading} />
+                </>
         }
         </>
     );
