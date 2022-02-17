@@ -11,7 +11,15 @@ function Profit({ stock, isLoading }) {
   return (
     <>
       <Box>
-        <Typography variant="h6" textAlign={"center"} sx={{ fontWeight: 700 }}>
+        <Typography
+          variant="h6"
+          textAlign={"center"}
+          sx={{
+            fontWeight: 700,
+            textDecoration: "underline #3A8871",
+            textDecorationThickness: 3,
+          }}
+        >
           Profit Margin
         </Typography>
       </Box>
@@ -38,8 +46,6 @@ function Profit({ stock, isLoading }) {
                 sx={{
                   height: 70,
                   width: 100,
-                  //   maxHeight: { xs: 233, md: 167 },
-                  //   maxWidth: { xs: 350, md: 250 },
                 }}
                 alt={product.name}
                 src={product.image}

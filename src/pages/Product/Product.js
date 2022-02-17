@@ -59,7 +59,7 @@ function Product({ stock, setRerender }) {
                     bgcolor: "neutral.bg",
                     minWidth: 360,
                     maxWidth: 420,
-                    padding: 1,
+                    padding: 0,
                     fontFamily: "Roboto Helvetica Arial sans-serif",
                   }}
                 >
@@ -70,31 +70,75 @@ function Product({ stock, setRerender }) {
                     sx={{ textAlign: "center" }}
                   >
                     {product.name}
-                    <hr style={{ borderColor: "red" }}></hr>
+                    <hr
+                      style={{
+                        borderColor: "#3A8871",
+                      }}
+                    ></hr>
                   </Typography>
-                  <Typography gutterBottom variant="body2" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="body2"
+                    component="div"
+                    sx={{ paddingLeft: 1 }}
+                  >
                     <strong>Categoria:</strong> {product.category}
                   </Typography>
-                  <Typography gutterBottom variant="body2" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="body2"
+                    component="div"
+                    sx={{ paddingLeft: 1 }}
+                  >
                     <strong>Descrição:</strong> {product.description}
                   </Typography>
-                  <Typography gutterBottom variant="body2" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="body2"
+                    component="div"
+                    sx={{ paddingLeft: 1 }}
+                  >
                     <strong>Fabricante:</strong> {product.supplier}
                   </Typography>
-                  <Typography gutterBottom variant="body2" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="body2"
+                    component="div"
+                    sx={{ paddingLeft: 1 }}
+                  >
                     <strong>Part number:</strong> {product.part_number}
                   </Typography>
-                  <Typography gutterBottom variant="body2" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="body2"
+                    component="div"
+                    sx={{ paddingLeft: 1 }}
+                  >
                     <strong>Ponto de Compra:</strong> {product.resupply_point}
                   </Typography>
-                  <Typography gutterBottom variant="body2" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="body2"
+                    component="div"
+                    sx={{ paddingLeft: 1 }}
+                  >
                     <strong>Quantidade:</strong> {product.quantity}
                   </Typography>
-                  <Typography gutterBottom variant="body2" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="body2"
+                    component="div"
+                    sx={{ paddingLeft: 1 }}
+                  >
                     <strong>Preço de compra:</strong> R${" "}
                     {product.purchase_price},00
                   </Typography>
-                  <Typography gutterBottom variant="body2" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="body2"
+                    component="div"
+                    sx={{ paddingLeft: 1, marginBottom: 0 }}
+                  >
                     <strong>Valor de venda:</strong> R$ {product.sale_value},00
                   </Typography>
                 </CardContent>

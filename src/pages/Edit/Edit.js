@@ -17,6 +17,7 @@ import BackspaceIcon from "@mui/icons-material/Backspace";
 import Stack from "@mui/material/Stack";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Typography } from "@mui/material";
 
 function Edit({ setRerender }) {
   const params = useParams();
@@ -94,6 +95,21 @@ function Edit({ setRerender }) {
 
   return (
     <>
+      <Box sx={{ margin: 0, minWidth: 360, maxWidth: 420 }}>
+        <Typography
+          variant="h6"
+          textAlign={"center"}
+          sx={{
+            fontWeight: 700,
+            textDecoration: "underline #3A8871",
+            textDecorationThickness: 3,
+            marginTop: 1.5,
+          }}
+        >
+          Edit Product
+        </Typography>
+      </Box>
+
       <Box
         component="form"
         sx={{
@@ -199,7 +215,7 @@ function Edit({ setRerender }) {
             sx={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "center",
+              justifyContent: "space-evenly",
             }}
           >
             <FormControlLabel
@@ -213,13 +229,6 @@ function Edit({ setRerender }) {
               value="acessório"
               control={<Radio />}
               label="Acessório"
-              onChange={HandleChange}
-              name="category"
-            />
-            <FormControlLabel
-              value="roupas"
-              control={<Radio />}
-              label="Roupas"
               onChange={HandleChange}
               name="category"
             />

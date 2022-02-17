@@ -13,13 +13,13 @@ function SearchProducts({ search, setSearch }) {
   }
 
   return (
-    <div>
+    <>
       <Box
         component="form"
         sx={{
           "& > :not(style)": {
-            minWidth: 360,
-            maxWidth: 420,
+            minWidth: 336,
+            maxWidth: 410,
             margin: 0,
             marginTop: 1,
             marginBottom: 1,
@@ -35,17 +35,16 @@ function SearchProducts({ search, setSearch }) {
           onChange={handleChange}
           type="text"
           value={search}
-          fullWidth
           InputProps={{
             startAdornment: (
-              <InputAdornment position="end" sx={{ color: "red" }}>
+              <InputAdornment position="end" sx={{ color: "#3A8871" }}>
                 <SearchIcon />
               </InputAdornment>
             ),
           }}
         />
       </Box>
-    </div>
+    </>
   );
 }
 
