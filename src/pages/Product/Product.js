@@ -33,7 +33,7 @@ function Product({ stock, setRerender }) {
     palette: {
       neutral: {
         main: "#495371",
-        bg: "rgba(211,211,211,0.5)",
+        bg: "rgba(211,211,211,0.3)",
       },
     },
   });
@@ -102,7 +102,7 @@ function Product({ stock, setRerender }) {
               <CardActions
                 sx={{
                   justifyContent: "space-between",
-                  bgcolor: "rgba(211,211,211,0.5)",
+                  bgcolor: "rgba(211,211,211,0.3)",
                   alignItems: "flex-start",
                   paddingBottom: 8,
                 }}
@@ -123,7 +123,7 @@ function Product({ stock, setRerender }) {
                       size="small"
                       sx={{ bgcolor: "white" }}
                     >
-                      Voltar
+                      Back
                     </Button>
                   </ThemeProvider>
                 </Link>
@@ -135,7 +135,7 @@ function Product({ stock, setRerender }) {
                   onClick={handleDelete}
                   sx={{ bgcolor: "white" }}
                 >
-                  Apagar
+                  Delete
                 </Button>
                 <Link
                   to={`/editProduct/${params._id}`}
@@ -148,7 +148,7 @@ function Product({ stock, setRerender }) {
                     size="small"
                     sx={{ bgcolor: "white" }}
                   >
-                    Editar
+                    Edit
                   </Button>
                 </Link>
               </CardActions>

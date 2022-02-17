@@ -13,9 +13,14 @@ import { Link } from "react-router-dom";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import AddIcon from "@mui/icons-material/Add";
 import HomeIcon from "@mui/icons-material/Home";
+import LiveHelpIcon from "@mui/icons-material/LiveHelp";
 
 export function Navbar() {
   const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   return (
     <Box
@@ -27,39 +32,46 @@ export function Navbar() {
       }}
     >
       <BottomNavigation
-        sx={{ bgcolor: "#495371", minWidth: 360, maxWidth: 420 }}
-        showlabels="true"
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
+        sx={{
+          bgcolor: "rgba(73, 83, 113, 1)",
+          minWidth: 360,
+          maxWidth: 420,
         }}
+        value={value}
+        onChange={handleChange}
       >
-        <Link to="/">
-          <BottomNavigationAction
-            showlabels='false'
-            label="Home"
-            icon={<HomeIcon />}
-            sx={{ color: "white" }}
-          />
-        </Link>
-        <Link to="/products">
-          <BottomNavigationAction
-            showlabels='false'
-
-            label="Products"
-            icon={<InventoryIcon />}
-            sx={{ color: "white" }}
-          />
-        </Link>
-        <Link to="/addProduct">
-          <BottomNavigationAction
-            showlabels='false'
-
-            label="Add Product"
-            icon={<AddIcon />}
-            sx={{ color: "white" }}
-          />
-        </Link>
+        <BottomNavigationAction
+          LinkComponent={Link}
+          to="/"
+          label="Home"
+          value="Home"
+          icon={<HomeIcon />}
+          sx={{ color: "white" }}
+        />
+        <BottomNavigationAction
+          LinkComponent={Link}
+          to="/products"
+          label="Product"
+          value="Product"
+          icon={<InventoryIcon />}
+          sx={{ color: "white" }}
+        />
+        <BottomNavigationAction
+          LinkComponent={Link}
+          to="/addProduct"
+          label="Add"
+          value="Add"
+          icon={<AddIcon />}
+          sx={{ color: "white" }}
+        />
+        <BottomNavigationAction
+          // LinkComponent={Link}
+          // to="/help"
+          label="Help"
+          value="Help"
+          icon={<LiveHelpIcon />}
+          sx={{ color: "white" }}
+        />
       </BottomNavigation>
     </Box>
   );
