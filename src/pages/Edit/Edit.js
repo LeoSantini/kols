@@ -1,6 +1,6 @@
-import { useParams, useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import axios from "axios"
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 // Import form Material UI
 import * as React from "react";
@@ -15,22 +15,24 @@ import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import Stack from "@mui/material/Stack";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function Edit({ setRerender }) {
-  const params = useParams()
-  const navigate = useNavigate()
+  const params = useParams();
+  const navigate = useNavigate();
   const [form, setForm] = useState({
-    "name": "",
-    "description": "",
-    "quantity": 0,
-    "purchase_price": 0,
-    "sale_value": 0,
-    "part_number": "",
-    "supplier": "",
-    "resupply_point": 0,
-    "category": "",
-    "image": ""
-  })
+    name: "",
+    description: "",
+    quantity: 0,
+    purchase_price: 0,
+    sale_value: 0,
+    part_number: "",
+    supplier: "",
+    resupply_point: 0,
+    category: "",
+    image: "",
+  });
 
   function HandleChange(event) {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -44,12 +46,12 @@ function Edit({ setRerender }) {
       }
     }
 
-    delete form._id
+    delete form._id;
 
-    axios.put(`https://ironrest.herokuapp.com/kols/${params._id}`, form)
-    console.log(form)
-    navigate(`/products`)
-    setRerender(true)
+    axios.put(`https://ironrest.herokuapp.com/kols/${params._id}`, form);
+    console.log(form);
+    navigate(`/products`);
+    setRerender(true);
   }
 
   function HandleClear() {
@@ -64,13 +66,15 @@ function Edit({ setRerender }) {
       resupply_point: 0,
       category: "",
       image: "",
-    })
+    });
   }
 
   useEffect(() => {
     async function fetchProduct() {
       try {
-        const response = await axios.get(`https://ironrest.herokuapp.com/kols/${params._id}`);
+        const response = await axios.get(
+          `https://ironrest.herokuapp.com/kols/${params._id}`
+        );
         setForm({ ...response.data });
       } catch (error) {
         console.log(error);
@@ -79,14 +83,25 @@ function Edit({ setRerender }) {
     fetchProduct();
   }, [params._id]);
 
-
+  const theme = createTheme({
+    palette: {
+      neutral: {
+        main: "#495371",
+        bg: "rgba(211,211,211,0.5)",
+      },
+    },
+  });
 
   return (
-    <div>
+    <>
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { maxWidth: 360, marginTop: 1 },
+          "& > :not(style)": {
+            minWidth: 360,
+            maxWidth: 420,
+            marginTop: 1.5,
+          },
         }}
         noValidate
         autoComplete="off"
@@ -181,6 +196,11 @@ function Edit({ setRerender }) {
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="female"
             name="radio-buttons-group"
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
           >
             <FormControlLabel
               value="celular"
@@ -217,14 +237,34 @@ function Edit({ setRerender }) {
       <Stack
         direction="row"
         justifyContent={"center"}
-        spacing={6}
-        sx={{ marginTop: 1 }}
+        spacing={4}
+        sx={{ marginTop: 1, marginBottom: 8 }}
       >
+        <Link
+          to={`/products`}
+          style={{
+            textDecoration: "none",
+            backgroundColor: "white",
+            borderRadius: 5,
+          }}
+        >
+          <ThemeProvider theme={theme}>
+            <Button
+              variant="outlined"
+              startIcon={<ArrowBackIcon />}
+              color="neutral"
+              size="small"
+              sx={{ bgcolor: "white" }}
+            >
+              Back
+            </Button>
+          </ThemeProvider>
+        </Link>
         <Button
           variant="outlined"
           startIcon={<BackspaceIcon />}
           color="error"
-          size="large"
+          size="small"
           onClick={HandleClear}
         >
           Clear
@@ -235,14 +275,13 @@ function Edit({ setRerender }) {
           type="submit"
           onClick={HandleSubmit}
           color="success"
-          size="large"
+          size="small"
         >
-          Salvar
+          Send
         </Button>
-        {/* Leo - adicionar aqui o botão de voltar */}
       </Stack>
-    </div>
-  )
+    </>
+  );
 }
 
-export default Edit
+export default Edit;

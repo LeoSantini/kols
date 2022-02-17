@@ -11,14 +11,26 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import { Typography } from "@mui/material";
 
 function Products({ stock, isLoading }) {
   const [search, setSearch] = useState("");
 
   return (
-    <div>
+    <>
       {!isLoading && (
-        <div>
+        <>
+          <Box>
+            <Typography
+              variant="h6"
+              textAlign={"center"}
+              sx={{ fontWeight: 700, mt: 1.5 }}
+            >
+              Profit Margin
+            </Typography>
+          </Box>
+
           <SearchProducts search={search} setSearch={setSearch} />
 
           <TableContainer
@@ -34,28 +46,34 @@ function Products({ stock, isLoading }) {
                 <TableRow sx={{ bgcolor: "#F1E0AC" }}>
                   <TableCell
                     align="center"
-                    sx={{ color: "gray", padding: 0.3 }}
+                    sx={{ color: "gray", padding: 0.3, fontWeight: 700 }}
                   >
-                    <strong>Part Number</strong>
+                    Part Number
                   </TableCell>
                   <TableCell
                     align="left"
-                    sx={{ color: "gray", padding: 0.3, paddingLeft: 2 }}
+                    sx={{
+                      color: "gray",
+                      padding: 0.3,
+                      paddingLeft: 2,
+                      fontWeight: 700,
+                    }}
                   >
-                    <strong>Item</strong>
+                    Item
                   </TableCell>
                   <TableCell
                     align="center"
-                    sx={{ color: "gray", padding: 0.3 }}
+                    sx={{ color: "gray", padding: 0.3, fontWeight: 700 }}
                   >
-                    <strong>Quantidade</strong>
+                    Quantidade
                   </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {stock
                   .filter(product => {
-                    return product.name.toLowerCase()
+                    return product.name
+                      .toLowerCase()
                       .includes(search.toLowerCase());
                   })
                   .map(product => (
@@ -114,10 +132,10 @@ function Products({ stock, isLoading }) {
               </TableBody>
             </Table>
           </TableContainer>
-        </div>
+        </>
       )}
       {isLoading && <p>Carregando...</p>}
-    </div>
+    </>
   );
 }
 

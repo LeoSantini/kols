@@ -84,11 +84,11 @@ function Form({ setRerender }) {
           component="div"
           align="center"
           sx={{
-            bgcolor: "rgba(211, 211, 211, 0.5)",
+            bgcolor: "rgba(211, 211, 211, 0.3)",
             marginTop: 0.5,
           }}
         >
-          Cadastro de Produto
+          Add New Product
         </Typography>
         <hr
           style={{

@@ -21,7 +21,11 @@ function Resupply({ stock, isLoading }) {
           variant="h6"
           component="div"
           align="center"
-          sx={{ bgcolor: "rgba(211, 211, 211, 0.5)", margin: 0 }}
+          sx={{
+            bgcolor: "rgba(211, 211, 211, 0.3)",
+            margin: 0,
+            fontWeight: 700,
+          }}
         >
           Resupply Point
         </Typography>
@@ -34,21 +38,35 @@ function Resupply({ stock, isLoading }) {
         ></hr>
       </Box>
       {!isLoading && (
-        <TableContainer component={Paper} sx={{ minWidth: 360, maxWidth: 420 }}>
+        <TableContainer
+          component={Paper}
+          sx={{ minWidth: 360, maxWidth: 420, pb: 7 }}
+        >
           <Table sx={{ width: "100%" }} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow sx={{ bgcolor: "#F1E0AC" }}>
                 <TableCell
                   align="left"
-                  sx={{ color: "gray", padding: 0.3, paddingLeft: 2 }}
+                  sx={{
+                    color: "gray",
+                    padding: 0.3,
+                    paddingLeft: 2,
+                    fontWeight: 700,
+                  }}
                 >
-                  <strong>Item</strong>
+                  Item
                 </TableCell>
-                <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
-                  <strong>Quantidade</strong>
+                <TableCell
+                  align="center"
+                  sx={{ color: "gray", padding: 0.3, fontWeight: 700 }}
+                >
+                  Quantidade
                 </TableCell>
-                <TableCell align="center" sx={{ color: "gray", padding: 0.3 }}>
-                  <strong>Ponto Compra</strong>
+                <TableCell
+                  align="center"
+                  sx={{ color: "gray", padding: 0.3, fontWeight: 700 }}
+                >
+                  Ponto Compra
                 </TableCell>
               </TableRow>
             </TableHead>
