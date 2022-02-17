@@ -30,7 +30,7 @@ function Profit({ stock, isLoading }) {
                 fontWeight: 700,
                 margin: 1.5,
                 padding: 1,
-                justifyContent: "space-around"
+                justifyContent: "space-around",
               }}
             >
               <Box

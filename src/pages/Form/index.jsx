@@ -83,19 +83,11 @@ function Form({ setRerender }) {
           variant="h6"
           component="div"
           align="center"
-          sx={{
-            bgcolor: "rgba(211, 211, 211, 0.3)",
-            marginTop: 0.5,
-          }}
+          textAlign={"center"}
+          sx={{ fontWeight: 700, marginTop: 1.5 }}
         >
           Add New Product
         </Typography>
-        <hr
-          style={{
-            borderColor: "red",
-            borderWidth: "auto",
-          }}
-        ></hr>
       </Box>
       <Box
         component="form"
