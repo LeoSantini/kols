@@ -44,7 +44,7 @@ function App() {
           justifyContent: "space-around",
           height: "67px",
           backgroundColor: "white",
-          minWidth: 365,
+          minWidth: 360,
           maxWidth: 420,
           margin: 0,
           padding: 0,

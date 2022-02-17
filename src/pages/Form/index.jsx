@@ -84,7 +84,12 @@ function Form({ setRerender }) {
           component="div"
           align="center"
           textAlign={"center"}
-          sx={{ fontWeight: 700, marginTop: 1.5 }}
+          sx={{
+            fontWeight: 700,
+            marginTop: 1.5,
+            textDecoration: "underline #3A8871",
+            textDecorationThickness: 3,
+          }}
         >
           Add New Product
         </Typography>
@@ -194,7 +199,7 @@ function Form({ setRerender }) {
             sx={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "center",
+              justifyContent: "space-evenly",
             }}
           >
             <FormControlLabel

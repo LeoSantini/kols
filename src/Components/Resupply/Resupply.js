@@ -17,8 +17,32 @@ function Resupply({ stock, isLoading }) {
   return (
     <>
       <Box sx={{ margin: 0, minWidth: 360, maxWidth: 420 }}>
-        <Typography variant="h6" textAlign={"center"} sx={{ fontWeight: 700 }}>
+        <Typography
+          variant="h6"
+          textAlign={"center"}
+          sx={{
+            fontWeight: 700,
+            textDecoration: "underline #3A8871",
+            textDecorationThickness: 3,
+          }}
+        >
           Resupply Point
+        </Typography>
+      </Box>
+      <Box sx={{ margin: 0, minWidth: 360, maxWidth: 420 }}>
+        <Typography
+          variant="caption text"
+          textAlign={"center"}
+          sx={{
+            fontSize: 12,
+            display: "flex",
+            fontWeight: 700,
+            paddingTop: 1,
+            color: "red",
+            marginLeft: 1.5,
+          }}
+        >
+          *click on item to edit product
         </Typography>
       </Box>
       {!isLoading && (
@@ -29,11 +53,11 @@ function Resupply({ stock, isLoading }) {
             alignItems: "center",
             bgcolor: "background.paper",
             overflow: "hidden",
-            boxShadow: 1,
             fontWeight: 700,
-            margin: 1.5,
-            paddingLeft: 1,
-            paddingRight: 1,
+            marginTop: 0,
+            marginLeft: 1.5,
+            marginRight: 1.5,
+            marginBottom: 1.5,
             paddingBottom: 5.5,
             justifyContent: "space-around",
           }}
@@ -48,11 +72,11 @@ function Resupply({ stock, isLoading }) {
               aria-label="a dense table"
             >
               <TableHead>
-                <TableRow sx={{ bgcolor: "#F1E0AC" }}>
+                <TableRow sx={{ bgcolor: "#3A8871" }}>
                   <TableCell
                     align="left"
                     sx={{
-                      color: "gray",
+                      color: "white",
                       padding: 0.3,
                       paddingLeft: 2,
                       fontWeight: 700,
@@ -62,13 +86,13 @@ function Resupply({ stock, isLoading }) {
                   </TableCell>
                   <TableCell
                     align="center"
-                    sx={{ color: "gray", padding: 0.3, fontWeight: 700 }}
+                    sx={{ color: "white", padding: 0.3, fontWeight: 700 }}
                   >
                     Quantidade
                   </TableCell>
                   <TableCell
                     align="center"
-                    sx={{ color: "gray", padding: 0.3, fontWeight: 700 }}
+                    sx={{ color: "white", padding: 0.3, fontWeight: 700 }}
                   >
                     RP
                   </TableCell>
