@@ -20,6 +20,7 @@ export function Navbar() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    event.target.style.color = 'white'
   };
 
   return (
@@ -30,6 +31,7 @@ export function Navbar() {
         bottom: 0,
         zIndex: 1000,
       }}
+      
     >
       <BottomNavigation
         sx={{
@@ -47,6 +49,7 @@ export function Navbar() {
           value="Home"
           icon={<HomeIcon />}
           sx={{ color: "white" }}
+          onChange={handleChange}
         />
         <BottomNavigationAction
           LinkComponent={Link}
@@ -55,6 +58,7 @@ export function Navbar() {
           value="Product"
           icon={<InventoryIcon />}
           sx={{ color: "white" }}
+          onChange={handleChange}
         />
         <BottomNavigationAction
           LinkComponent={Link}
@@ -63,14 +67,16 @@ export function Navbar() {
           value="Add"
           icon={<AddIcon />}
           sx={{ color: "white" }}
+          onChange={handleChange}
         />
         <BottomNavigationAction
-          // LinkComponent={Link}
-          // to="/help"
+          LinkComponent={Link}
+          to="/contact"
           label="Help"
           value="Help"
           icon={<LiveHelpIcon />}
           sx={{ color: "white" }}
+          onChange={handleChange}
         />
       </BottomNavigation>
     </Box>

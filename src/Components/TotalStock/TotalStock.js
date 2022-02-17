@@ -26,6 +26,9 @@ function TotalStock({ stock, isLoading }) {
               padding: 2,
               minWidth: 300,
               margin: 1.5,
+              display: 'flex',
+              flexDirection: 'column-reverse',
+              alignItems: 'center'
             }}
           >
             <Box sx={{ color: "text.secondary" }}>TotalStock Compra</Box>
@@ -37,7 +40,7 @@ function TotalStock({ stock, isLoading }) {
                 (acumulador, currentElement) =>
                   Number(acumulador) +
                   Number(currentElement.purchase_price) *
-                    Number(currentElement.quantity),
+                  Number(currentElement.quantity),
                 0
               )}
               ,00
@@ -75,6 +78,9 @@ function TotalStock({ stock, isLoading }) {
               padding: 2,
               minWidth: 300,
               margin: 1.5,
+              display: 'flex',
+              flexDirection: 'column-reverse',
+              alignItems: 'center'
             }}
           >
             <Box sx={{ color: "text.secondary" }}>TotalStock Venda</Box>
@@ -86,7 +92,7 @@ function TotalStock({ stock, isLoading }) {
                 (acumulador, currentElement) =>
                   Number(acumulador) +
                   Number(currentElement.sale_value) *
-                    Number(currentElement.quantity),
+                  Number(currentElement.quantity),
                 0
               )}
               ,00

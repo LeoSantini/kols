@@ -213,16 +213,9 @@ function Form({ setRerender }) {
               name="category"
             />
             <FormControlLabel
-              value="livros"
+              value="acessório"
               control={<Radio />}
-              label="Livros"
-              onChange={HandleChange}
-              name="category"
-            />
-            <FormControlLabel
-              value="roupas"
-              control={<Radio />}
-              label="Roupas"
+              label="Acessório"
               onChange={HandleChange}
               name="category"
             />
