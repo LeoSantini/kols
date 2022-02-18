@@ -21,8 +21,8 @@ This project has been created in the second module at Ironhack São Paulo - Web 
 ## Check the app
 [Click here](https://kolstock.netlify.app/)
 
-## Presentation **Portuguese**
-[Click here](https://www.canva.com/design/DAE4pbZ9ltc/voBXo2Cx_gBA-fXI0UahZA/view?utm_content=DAE4pbZ9ltc&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+## Presentation
+[Click here](https://www.canva.com/design/DAE4pbZ9ltc/voBXo2Cx_gBA-fXI0UahZA/view?utm_content=DAE4pbZ9ltc&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink) **(Portuguese)**
 
 ### Developers
 > Karen Okasaki [Github](https://github.com/karenokasaki)
