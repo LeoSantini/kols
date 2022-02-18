@@ -1,37 +1,35 @@
 # KOLSTOCK app
-Aplicativo de controle de estoque para **celular** (360x640)! 
+Inventory control app for **mobile** (360x640)! 
 
-## About
-Esse aplicativo foi desenvolvido usando
+## About the project
+This project has been created in the second module at Ironhack São Paulo - Web Development Bootcamp using:
 - Ironhack API.
 - React
-- Material UI
+- Framework Material UI
 
-O maior desafio do projeto foi desenvolve-lo na versão mobile utilizando o Material UI.
+## Features
+- Create product
+- Edit product
+- Product category
+- Report
+	- Total amount of items in stock
+	- Profit margin per product
+	- Purchase price
+	- Sale value
+	- Resupply point 
 
-## Funcionalidades
-- Criar produtos
-- Editar produtos
-- Categorias de produtos
-- Relatórios
-	- Quantidade total de itens em estoque
-	- Margem de lucro por produto (em reais e porcentagem)
-	- Valor de compra
-	- Valor de Venda
-	- Lista de produtos em ponto de pedido
+## Check the app
+[Click here](https://kolstock.netlify.app/)
 
-## App
-[KOLSTOCK](https://kolstock.netlify.app/)
-
-## Sobre o projeto
+## Presentation **Portuguese**
 [Click here](https://www.canva.com/design/DAE4pbZ9ltc/voBXo2Cx_gBA-fXI0UahZA/view?utm_content=DAE4pbZ9ltc&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
-### Desenvolvedores
+### Developers
 > Karen Okasaki [Github](https://github.com/karenokasaki)
 > Leonardo Santini [Github](https://github.com/LeoSantini)
 
 **Install**
-Para rodar a aplicação na sua maquina local, clone o repositório e execute os comandos abaixo:
+To run the application on your localhost, clone the repo and then execute the commands below:
 
 <code>$ git clone https://github.com/LeoSantini/kols.git
 $ cd kols npm install
