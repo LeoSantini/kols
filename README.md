@@ -22,7 +22,7 @@ O maior desafio do projeto foi desenvolve-lo na versão mobile utilizando o Mate
 
 ## Links
 App: [KOLSTOCK](https://kolstock.netlify.app/)
-Apresentação: 
+Apresentação: [Click here](https://www.canva.com/design/DAE4pbZ9ltc/voBXo2Cx_gBA-fXI0UahZA/view?utm_content=DAE4pbZ9ltc&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 ### Desenvolvedores
 > Karen Okasaki [Github](https://github.com/karenokasaki)
