@@ -24,13 +24,13 @@ This project has been created in the second module at Ironhack São Paulo - Web 
 ## Presentation
 [Click here](https://www.canva.com/design/DAE4pbZ9ltc/voBXo2Cx_gBA-fXI0UahZA/view?utm_content=DAE4pbZ9ltc&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink) **(Portuguese)**
 
-### Developers
+## Developers
 > Karen Okasaki [Github](https://github.com/karenokasaki)
 > Leonardo Santini [Github](https://github.com/LeoSantini)
 
-**Install**
+## Install
 To run the application on your localhost, clone the repo and then execute the commands below:
 
-<code>$ git clone https://github.com/LeoSantini/kols.git
-$ cd kols npm install
-$ npm start </code>
+<code>$ git clone https://github.com/LeoSantini/kols.git</code>
+<code>$ cd kols npm install</code>
+<code>$ npm start </code>
