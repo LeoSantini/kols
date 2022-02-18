@@ -20,9 +20,11 @@ O maior desafio do projeto foi desenvolve-lo na versão mobile utilizando o Mate
 	- Valor de Venda
 	- Lista de produtos em ponto de pedido
 
-## Links
-App: [KOLSTOCK](https://kolstock.netlify.app/)
-Apresentação: [Click here](https://www.canva.com/design/DAE4pbZ9ltc/voBXo2Cx_gBA-fXI0UahZA/view?utm_content=DAE4pbZ9ltc&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+## App
+[KOLSTOCK](https://kolstock.netlify.app/)
+
+## Sobre o projeto
+[Click here](https://www.canva.com/design/DAE4pbZ9ltc/voBXo2Cx_gBA-fXI0UahZA/view?utm_content=DAE4pbZ9ltc&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 ### Desenvolvedores
 > Karen Okasaki [Github](https://github.com/karenokasaki)
